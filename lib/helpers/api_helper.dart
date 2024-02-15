@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
-  Future<dynamic> Get({required String url, @required String? token}) async {
+  Future<dynamic> get({required String url, @required String? token}) async {
     Map<String, String> headers = {};
     if (token != null) {
       headers.addAll({
@@ -19,7 +19,7 @@ class Api {
     }
   }
 
-  Future<dynamic> Post(
+  Future<dynamic> post(
       {required String url,
       @required dynamic body,
       @required String? token}) async {
@@ -46,7 +46,7 @@ class Api {
     }
   }
 
-  Future<dynamic> Put(
+  Future<dynamic> put(
       {required String url,
       @required dynamic body,
       @required String? token}) async {

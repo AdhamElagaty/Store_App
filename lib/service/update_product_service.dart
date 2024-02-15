@@ -2,9 +2,9 @@ import 'package:store_app/helpers/api_helper.dart';
 import 'package:store_app/models/product_model.dart';
 
 class UpdateProductService {
-  Future<ProductModel> UpdateProduct(
+  Future<ProductModel> updateProduct(
       {required ProductModel productModel}) async {
-    return ProductModel.fromJSON(await Api().Put(
+    return ProductModel.fromJSONUpdate(await Api().put(
         url: "https://fakestoreapi.com/products/${productModel.id}",
         body: {
           "title": productModel.title,

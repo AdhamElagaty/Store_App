@@ -4,7 +4,7 @@ import 'package:store_app/models/product_model.dart';
 class GetCategoryProductsService {
   Future<List<ProductModel>> GetCategoryProducts(
       {required String categoryName}) async {
-    List<dynamic> jsonData = await Api().Get(
+    List<dynamic> jsonData = await Api().get(
         url: "https://fakestoreapi.com/products/category/$categoryName",
         token: null);
     List<ProductModel> productsModel = [];

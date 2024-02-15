@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/service/get_all_product_service.dart';
@@ -9,7 +11,7 @@ class LoadProductList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<ProductModel>>(
-        future: GetData(),
+        future: getData(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<ProductModel> productModels = snapshot.data!;
@@ -26,11 +28,11 @@ class LoadProductList extends StatelessWidget {
         });
   }
 
-  Future<List<ProductModel>>? GetData() {
+  Future<List<ProductModel>>? getData() {
     try {
-      return GetAllProductsService().GetAllProducts();
+      return GetAllProductsService().getAllProducts();
     } on Exception catch (e) {
-      print(e.toString());
+      log(e.toString());
       return null;
     }
   }

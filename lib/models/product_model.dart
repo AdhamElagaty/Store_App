@@ -28,6 +28,18 @@ class ProductModel {
       ratingModel: RatingModel.fromJSON(jsonData["rating"]),
     );
   }
+
+  factory ProductModel.fromJSONUpdate(jsonData) {
+    return ProductModel(
+      id: jsonData["id"],
+      title: jsonData["title"],
+      price: jsonData["price"].toString(),
+      description: jsonData["description"],
+      category: jsonData["category"],
+      image: jsonData["image"],
+      ratingModel: RatingModel(rate: "0", count: 0),
+    );
+  }
 }
 
 class RatingModel {

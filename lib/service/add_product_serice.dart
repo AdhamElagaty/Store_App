@@ -3,7 +3,7 @@ import 'package:store_app/models/product_model.dart';
 
 class AddProductService {
   Future<ProductModel> AddProduct(ProductModel productModel) async {
-    return ProductModel.fromJSON(await Api().Post(
+    return ProductModel.fromJSON(await Api().post(
         url: "https://fakestoreapi.com/products",
         body: {
           "title": productModel.title,
