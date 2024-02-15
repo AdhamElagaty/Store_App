@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/widgets/custom_product_box_widget.dart';
 
@@ -16,15 +17,14 @@ class CreateProductList extends StatelessWidget {
         bottom: 8,
         top: 85,
       ),
-      child: GridView.builder(
+      child: MasonryGridView.builder(
           physics: const BouncingScrollPhysics(),
           clipBehavior: Clip.none,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverSimpleGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: 90,
-            crossAxisSpacing: 10,
-            childAspectRatio: 1.7,
           ),
+          mainAxisSpacing: 90,
+          crossAxisSpacing: 10,
           itemCount: productModels.length,
           itemBuilder: (context, index) {
             return CustomProductBox(

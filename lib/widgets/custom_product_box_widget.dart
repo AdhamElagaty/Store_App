@@ -57,24 +57,19 @@ class _CustomProductBoxState extends State<CustomProductBox> {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Expanded(
-                            flex: 1,
-                            child: Text(
-                              widget.productModel.title,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                color: Color.fromARGB(255, 167, 167, 167),
-                                fontSize: 18,
-                              ),
+                          Text(
+                            widget.productModel.title,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 5,
+                            style: const TextStyle(
+                              color: Color.fromARGB(255, 167, 167, 167),
+                              fontSize: 18,
                             ),
                           ),
-                          Expanded(
-                            flex: 1,
-                            child: Text(
-                              "\$ ${widget.productModel.price}",
-                              style: const TextStyle(
-                                fontSize: 18,
-                              ),
+                          Text(
+                            "\$ ${widget.productModel.price}",
+                            style: const TextStyle(
+                              fontSize: 18,
                             ),
                           ),
                         ],
