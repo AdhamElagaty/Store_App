@@ -110,10 +110,13 @@ class _CustomProductBoxState extends State<CustomProductBox> {
           Positioned(
             top: -75,
             left: 55,
-            child: Image.network(
-              widget.productModel.image,
-              height: 120,
-              width: 110,
+            child: Hero(
+              tag: widget.productModel,
+              child: Image.network(
+                widget.productModel.image,
+                height: 120,
+                width: 110,
+              ),
             ),
           ),
         ],

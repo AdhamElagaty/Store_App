@@ -33,10 +33,13 @@ class UpdateProductScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.network(
-              oldProductModel.image,
-              height: 120,
-              width: 120,
+            Hero(
+              tag: oldProductModel,
+              child: Image.network(
+                oldProductModel.image,
+                height: 120,
+                width: 120,
+              ),
             ),
             CustomTextField(
               hintText: "Enter Product Title",
