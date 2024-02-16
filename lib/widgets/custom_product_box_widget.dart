@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
+import 'package:store_app/screens/product_details_screen.dart';
 import 'package:store_app/screens/update_product_screen.dart';
 
 class CustomProductBox extends StatefulWidget {
@@ -21,7 +22,7 @@ class _CustomProductBoxState extends State<CustomProductBox> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, UpdateProductScreen.id,
+        Navigator.pushNamed(context, ProductDetailsScreen.id,
             arguments: widget.productModel);
       },
       child: Stack(
